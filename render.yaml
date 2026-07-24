@@ -10,7 +10,7 @@ services:
     runtime: node
     plan: free
     region: singapore # Options: oregon, frankfurt, singapore, ohio
-    rootDir: StockSense_final/web
+    rootDir: web
     buildCommand: npm install && npm run build
     startCommand: npm start
     autoDeploy: true
