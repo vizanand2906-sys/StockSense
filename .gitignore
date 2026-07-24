@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Python / ML Microservice
+ml-service/venv/
+ml-service/__pycache__/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing / Debug
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & OS
+.env
+.env*.local
+.DS_Store
+Thumbs.db

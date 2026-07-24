@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Phulkari Brand Palette */
+    --background: #2E3B27;
+    --foreground: #F0EAD6;
+
+    --card: #364430;
+    --card-foreground: #F0EAD6;
+
+    --popover: #2E3B27;
+    --popover-foreground: #F0EAD6;
+
+    --primary: #C84B31;
+    --primary-foreground: #F0EAD6;
+
+    --secondary: #7B3F2B;
+    --secondary-foreground: #F0EAD6;
+
+    --muted: #3F5037;
+    --muted-foreground: #A8B89A;
+
+    --accent: #D4A853;
+    --accent-foreground: #2E3B27;
+
+    --destructive: #EF4444;
+    --destructive-foreground: #F0EAD6;
+
+    --border: #4F5E44;
+    --input: #4F5E44;
+    --ring: #C84B31;
+
+    --radius: 14px;
+
+    /* Phulkari Custom */
+    --cream: #F0EAD6;
+    --forest: #3B4A33;
+    --forest-dark: #2E3B27;
+    --brick: #C84B31;
+    --terracotta: #7B3F2B;
+    --gold: #D4A853;
+    --sage: #A8B89A;
+    --moss: #4F5E44;
+
+    /* Global font scale — increase to make everything larger */
+    font-size: 22px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 22px;
+  }
+  body {
+    background-color: #2E3B27;
+    color: #F0EAD6;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;       /* 22px */
+    line-height: 1.6;
+  }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; letter-spacing: 0.01em; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem;   font-weight: 600; letter-spacing: 0.01em; }
+  h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; }
+  h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; }
+  p  { font-size: 1rem; line-height: 1.6; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+}
+
+
+/* Phulkari Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #2E3B27;
+}
+::-webkit-scrollbar-thumb {
+  background: #4F5E44;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C84B31;
+}
+
+/* Embroidery border pattern */
+.phulkari-border {
+  border-image: repeating-linear-gradient(
+    90deg,
+    #C84B31 0px,
+    #C84B31 4px,
+    #D4A853 4px,
+    #D4A853 8px,
+    #C84B31 8px,
+    #C84B31 12px,
+    transparent 12px,
+    transparent 16px
+  ) 4;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(54, 68, 48, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 94, 68, 0.6);
+}
+
+/* Metric card hover */
+.metric-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* Phulkari gradient */
+.phulkari-gradient {
+  background: linear-gradient(135deg, #364430 0%, #2E3B27 50%, #3B4A33 100%);
+}
+
+/* Gold shimmer */
+.gold-text {
+  background: linear-gradient(90deg, #D4A853, #F0C060, #D4A853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Status badges */
+.badge-up { color: #4ade80; background: rgba(74, 222, 128, 0.15); }
+.badge-down { color: #f87171; background: rgba(248, 113, 113, 0.15); }
+.badge-neutral { color: #A8B89A; background: rgba(168, 184, 154, 0.15); }
