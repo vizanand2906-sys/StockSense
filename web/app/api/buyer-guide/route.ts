@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-
-const FASTAPI_URL = process.env.FASTAPI_URL || "http://localhost:8000";
+import { getFastApiUrl } from "@/lib/utils";
 
 export async function POST(request: Request) {
   try {
@@ -17,8 +16,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Market trip date is required" }, { status: 400 });
     }
 
+    const fastApiUrl = getFastApiUrl();
+
     // Call FastAPI microservice
-    const response = await fetch(`${FASTAPI_URL}/guide/generate`, {
+    const response = await fetch(`${fastApiUrl}/guide/generate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,9 +34,6 @@ export async function POST(request: Request) {
 
     const data = await response.json();
     
-    // The data will be saved to Supabase by Next.js, or by FastAPI.
-    // The spec says: Next.js saves to buyer_guides table.
-    
     const { error: dbError } = await supabase.from('buyer_guides').insert({
       store_id: store_id,
       market_trip_date: market_trip_date,
@@ -45,7 +43,6 @@ export async function POST(request: Request) {
 
     if (dbError) {
       console.error("Error saving guide to DB:", dbError);
-      // We still return the guide even if DB save fails
     }
 
     return NextResponse.json({ success: true, guide: data.guide });

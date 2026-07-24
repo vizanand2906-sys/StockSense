@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-
-const FASTAPI_URL = process.env.FASTAPI_URL || "http://localhost:8000";
+import { getFastApiUrl } from "@/lib/utils";
 
 export async function POST(request: Request) {
   try {
@@ -11,11 +10,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
+    const fastApiUrl = getFastApiUrl();
+
     // Forward the file directly to FastAPI via a new FormData
     const apiFormData = new FormData();
     apiFormData.append("file", file);
 
-    const response = await fetch(`${FASTAPI_URL}/ingest/csv`, {
+    const response = await fetch(`${fastApiUrl}/ingest/csv`, {
       method: "POST",
       body: apiFormData,
     });

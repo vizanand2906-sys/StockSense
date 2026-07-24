@@ -18,10 +18,7 @@ services:
       - key: NODE_VERSION
         value: 20.11.0
       - key: FASTAPI_URL
-        fromService:
-          type: web
-          name: stocksense-ml
-          property: url
+        sync: false
       - key: NEXT_PUBLIC_SUPABASE_URL
         sync: false
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -43,7 +40,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.10.12
       - key: ALLOWED_ORIGINS
-        value: "*"
+        sync: false
       - key: OPENAI_API_KEY
         sync: false
       - key: SUPABASE_URL

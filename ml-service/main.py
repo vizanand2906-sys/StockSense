@@ -9,7 +9,11 @@ app = FastAPI(title="StockSense ML Microservice")
 
 import os
 
-origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:3000,*").split(",")
+raw_origins = os.environ.get("ALLOWED_ORIGINS", "*")
+if raw_origins.strip() == "*":
+    origins = ["*"]
+else:
+    origins = [o.strip() for o in raw_origins.split(",") if o.strip()]
 
 app.add_middleware(
     CORSMiddleware,
