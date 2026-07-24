@@ -1,9 +1,9 @@
 # Render Infrastructure as Code (Blueprint)
-# Deploying StockSense Web (Next.js) & StockSense ML (FastAPI) on Render Free Tier
+# Standalone Next.js Frontend Deployment on Render Free Tier
 
 services:
   # ----------------------------------------------------
-  # 1. Next.js Web Frontend Service
+  # StockSense Next.js Web Frontend Service
   # ----------------------------------------------------
   - type: web
     name: stocksense-web
@@ -17,33 +17,7 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
-      - key: FASTAPI_URL
-        sync: false
       - key: NEXT_PUBLIC_SUPABASE_URL
         sync: false
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
-        sync: false
-
-  # ----------------------------------------------------
-  # 2. FastAPI Python ML Microservice
-  # ----------------------------------------------------
-  - type: web
-    name: stocksense-ml
-    runtime: python
-    plan: free
-    region: singapore
-    rootDir: StockSense_final/ml-service
-    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    autoDeploy: true
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.12
-      - key: ALLOWED_ORIGINS
-        sync: false
-      - key: OPENAI_API_KEY
-        sync: false
-      - key: SUPABASE_URL
-        sync: false
-      - key: SUPABASE_KEY
         sync: false
