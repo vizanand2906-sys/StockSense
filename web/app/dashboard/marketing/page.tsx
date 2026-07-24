@@ -105,7 +105,7 @@ export default function MarketingDashboardPage() {
             <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
             <XAxis dataKey="month" stroke="#A8B89A" tick={{ fontSize: 11 }} />
             <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={fmt} />
-            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmt(v), ""]} />
+            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmt(v), ""]} />
             <Line type="monotone" dataKey="instagram" stroke="#E1306C" strokeWidth={2} name="Instagram" dot={false} />
             <Line type="monotone" dataKey="whatsapp" stroke="#25D366" strokeWidth={2} name="WhatsApp" dot={false} />
             <Line type="monotone" dataKey="google" stroke="#4285F4" strokeWidth={2} name="Google" dot={false} />

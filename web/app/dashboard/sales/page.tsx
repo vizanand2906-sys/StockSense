@@ -78,7 +78,7 @@ export default function SalesDashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis dataKey="hour" stroke="#A8B89A" tick={{ fontSize: 10 }} />
               <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={fmtK} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmtK(v), "Sales"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmtK(v), "Sales"]} />
               <Area type="monotone" dataKey="sales" stroke="#D4A853" fill="url(#hrGrad)" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>
@@ -93,7 +93,7 @@ export default function SalesDashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis dataKey="day" stroke="#A8B89A" tick={{ fontSize: 11 }} />
               <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={fmt} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmt(v), "Sales"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmt(v), "Sales"]} />
               <Bar dataKey="sales" fill="#C84B31" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -109,7 +109,7 @@ export default function SalesDashboardPage() {
             <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
             <XAxis dataKey="month" stroke="#A8B89A" tick={{ fontSize: 11 }} />
             <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={fmt} />
-            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmt(v), ""]} />
+            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmt(v), ""]} />
             <Legend wrapperStyle={{ color: "#A8B89A", fontSize: "12px" }} />
             <Line type="monotone" dataKey="target" stroke="#4F5E44" strokeWidth={2} name="Target" strokeDasharray="5 5" dot={false} />
             <Line type="monotone" dataKey="revenue" stroke="#C84B31" strokeWidth={2.5} name="Revenue" dot={{ fill: "#C84B31", r: 4 }} />
@@ -126,7 +126,7 @@ export default function SalesDashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis type="number" stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={fmt} />
               <YAxis type="category" dataKey="name" stroke="#A8B89A" tick={{ fontSize: 11 }} width={80} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmt(v), "Revenue"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmt(v), "Revenue"]} />
               <Bar dataKey="revenue" fill="#D4A853" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>

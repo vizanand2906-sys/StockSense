@@ -132,7 +132,7 @@ export default function AIInsightsDashboardPage() {
             <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
             <XAxis dataKey="week" stroke="#A8B89A" tick={{ fontSize: 11 }} />
             <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={v => `₹${v}L`} />
-            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [`₹${v}L`, ""]} />
+            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [`₹${v}L`, ""]} />
             <Line type="monotone" dataKey="actual" stroke="#4ade80" strokeWidth={2} name="Actual" dot={{ fill: "#4ade80", r: 4 }} connectNulls={false} />
             <Line type="monotone" dataKey="predicted" stroke="#D4A853" strokeWidth={2} strokeDasharray="5 5" name="Forecast" dot={{ fill: "#D4A853", r: 3 }} />
           </LineChart>

@@ -81,7 +81,7 @@ export default function BusinessModelPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis dataKey="month" stroke="#A8B89A" tick={{ fontSize: 9 }} />
               <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={fmtMRR} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmtMRR(v), "MRR"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmtMRR(v), "MRR"]} />
               <Bar dataKey="mrr" fill="#C84B31" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

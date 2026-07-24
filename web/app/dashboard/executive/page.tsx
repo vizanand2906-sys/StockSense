@@ -89,7 +89,7 @@ export default function ExecutiveDashboardPage() {
               <YAxis stroke="#A8B89A" tick={{ fontSize: 11 }} tickFormatter={fmt} />
               <Tooltip
                 contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }}
-                formatter={(v: number) => [fmt(v), ""]}
+                formatter={(v: any) => [fmt(v), ""]}
               />
               <Area type="monotone" dataKey="target" stroke="#D4A853" strokeDasharray="5 5" fill="none" strokeWidth={2} name="Target" />
               <Area type="monotone" dataKey="revenue" stroke="#C84B31" fill="url(#revGrad)" strokeWidth={2} name="Revenue" />

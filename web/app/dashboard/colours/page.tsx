@@ -57,7 +57,7 @@ export default function ColourDashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis type="number" stroke="#A8B89A" tick={{ fontSize: 9 }} tickFormatter={fmt} />
               <YAxis type="category" dataKey="name" stroke="#A8B89A" tick={{ fontSize: 11 }} width={65} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmt(v), "Sales"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmt(v), "Sales"]} />
               <Bar dataKey="sales" radius={[0, 4, 4, 0]}>
                 {COLOURS.map((c, i) => (
                   <rect key={i} fill={c.hex} />

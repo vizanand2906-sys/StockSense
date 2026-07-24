@@ -60,7 +60,7 @@ export default function FabricDashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis type="number" stroke="#A8B89A" tick={{ fontSize: 9 }} tickFormatter={fmt} />
               <YAxis type="category" dataKey="name" stroke="#A8B89A" tick={{ fontSize: 11 }} width={70} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [fmt(v), "Revenue"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [fmt(v), "Revenue"]} />
               <Bar dataKey="revenue" fill="#C84B31" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>

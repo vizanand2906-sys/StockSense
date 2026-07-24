@@ -27,7 +27,7 @@ export default function DesignPerformancePage() {
             <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
             <XAxis dataKey="name" stroke="#A8B89A" tick={{ fontSize: 10 }} />
             <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={v => `₹${(v/1000).toFixed(0)}K`} />
-            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [`₹${(v/1000).toFixed(0)}K`, ""]} />
+            <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [`₹${(v/1000).toFixed(0)}K`, ""]} />
             <Bar dataKey="revenue" fill="#C84B31" radius={[4, 4, 0, 0]} name="Revenue" />
           </BarChart>
         </ResponsiveContainer>

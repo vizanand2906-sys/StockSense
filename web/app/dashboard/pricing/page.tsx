@@ -50,7 +50,7 @@ export default function PricingDashboardPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#4F5E44" />
               <XAxis dataKey="month" stroke="#A8B89A" tick={{ fontSize: 11 }} />
               <YAxis stroke="#A8B89A" tick={{ fontSize: 10 }} tickFormatter={v => `₹${(v/1000).toFixed(1)}K`} />
-              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: number) => [`₹${(v/1000).toFixed(1)}K`, "ASP"]} />
+              <Tooltip contentStyle={{ background: "#364430", border: "1px solid #4F5E44", borderRadius: "8px", color: "#F0EAD6" }} formatter={(v: any) => [`₹${(v/1000).toFixed(1)}K`, "ASP"]} />
               <Line type="monotone" dataKey="asp" stroke="#D4A853" strokeWidth={2.5} dot={{ fill: "#D4A853", r: 4 }} name="ASP" />
             </LineChart>
           </ResponsiveContainer>
